@@ -23,6 +23,8 @@ not a transliteration.
 
 | Converter | Source format | What it comes from |
 |:--|:--|:--|
+| [OpenAPI-to-AdHoc](https://github.com/AdHoc-Protocol/OpenAPI-to-AdHoc) | OpenAPI 3.x / Swagger 2.0 `.json` / `.yaml` | REST APIs |
+| [Protobuf-to-AdHoc](https://github.com/AdHoc-Protocol/Protobuf-to-AdHoc) | Protocol Buffers `.proto`: proto2, proto3, editions | gRPC services, message schemas |
 | [ROS2-to-AdHoc](https://github.com/AdHoc-Protocol/ROS2-to-AdHoc) | ROS 2 `.msg` / `.srv` / `.action` | robotics interfaces |
 | [DBC-to-AdHoc](https://github.com/AdHoc-Protocol/DBC-to-AdHoc) | Vector CAN database `.dbc` | automotive CAN buses |
 | [Avro-to-AdHoc](https://github.com/AdHoc-Protocol/Avro-to-AdHoc) | Apache Avro `.avsc` / `.avpr` | data pipelines, Kafka |
@@ -37,16 +39,6 @@ not a transliteration.
 | [LwM2M-to-AdHoc](https://github.com/AdHoc-Protocol/LwM2M-to-AdHoc) | OMA LwM2M object XML | IoT device management |
 
 Every converter above is listed under the [`adhoc-converter`](https://github.com/topics/adhoc-converter) topic.
-
-**Two more converters need no repository — they are built into AdHocAgent itself**, so the file you already have
-is the only argument:
-
-| Source format | Run | Notes |
-|:--|:--|:--|
-| [Protocol Buffers](https://protobuf.dev/) `.proto` | `AdHocAgent.exe MyProtocol.proto` | A whole directory works too; extra arguments are import search paths, and a final argument that is not a `.proto` is the output directory. |
-| [OpenAPI / Swagger](https://www.openapis.org/) `.json` / `.yaml` | `AdHocAgent.exe api.yaml` | A second argument names the output `.cs`; by default it lands next to the input. |
-
-Same promise as the repositories above: the result is a starting point you refine, not a finished protocol.
 
 ### Protocols over AdHoc
 
