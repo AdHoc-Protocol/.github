@@ -11,8 +11,7 @@ serialization, network plumbing and state machines in Java, C#, TypeScript, C++,
 ## Open source
 
 Beyond the generator, the organization keeps in the open what has been built with it: converters that bring other
-schema languages into AdHoc, and whole protocols re-expressed in AdHoc, generated, and bound to the real software
-on at least one side. Each repository is self-contained: fetch, build, generate, validate, run.
+schema languages into AdHoc. Each repository is self-contained: fetch, build, generate, validate, run.
 
 ### Converters to AdHoc protocol
 
@@ -39,14 +38,3 @@ not a transliteration.
 | [LwM2M-to-AdHoc](https://github.com/AdHoc-Protocol/LwM2M-to-AdHoc) | OMA LwM2M object XML | IoT device management |
 
 Every converter above is listed under the [`adhoc-converter`](https://github.com/topics/adhoc-converter) topic.
-
-### Protocols over AdHoc
-
-A well-known protocol written as an AdHoc description, generated into the hosts it needs, and bound to the real
-thing, so the description is checked against live traffic and not only against its spec. These are the reference
-for how a serious protocol looks in AdHoc: value packs, conduits, RPC actors, state chains, headers, injected
-fields, all in use.
-
-| Repository | Protocol | What is in it |
-|:--|:--|:--|
-| [CQL-over-AdHoc](https://github.com/AdHoc-Protocol/CQL-over-AdHoc) | Apache Cassandra native protocol, CQL binary protocol v5 | The whole `native_protocol_v5.spec` as one description, the spec's text carried in the doc comments. The generated Java Client and Server hosts. A binding that serves the protocol inside an Apache Cassandra 5.0 node beside the native transport: every request runs through Cassandra's own `execute`, every result is served as a view over the `ResultSet`, no copies, back pressure through the Stream conduits. A Docker node runner, a smoke client, and the same scenario on the native port for comparison. Jars on the releases page. |
